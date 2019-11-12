@@ -6,10 +6,10 @@ public int removeDuplicates(int[] nums) {
         if (nums.length == 0)
             return 0;
             
-        //otherwise, start from second element to check, if the element is identical with previous one.
+        //Set two pointers, one slower, one faster.
         int length = 1;
         for (int i = 1; i < nums.length; i++) {
-        //if not equal, length +1
+        //if equal, move the faster pointer only. If not equal, move both pointer and copy the value to nums[i + 1].
             if (nums[i] != nums[i - 1])
                 nums[length++] = nums[i];
         }
